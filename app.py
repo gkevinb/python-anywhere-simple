@@ -1,5 +1,6 @@
 from flask import Flask
 import git
+import pathlib
 
 app = Flask(__name__)
 
@@ -14,7 +15,8 @@ def test():
 
 @app.route("/git-update", methods=["POST"])
 def git_update():
-    repo = git.Repo("./")
+    path = pathlib.Path(__file__).parent.resolve()
+    repo = git.Repo(path)
     origin = repo.remotes.origin
     repo.create_head("master", origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
     origin.pull()
