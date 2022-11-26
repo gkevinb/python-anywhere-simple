@@ -14,7 +14,7 @@ def test():
 
 
 @app.route("/new")
-def test():
+def new():
     return "<p>New endpoint to test out automated deployement</p>"
 
 
