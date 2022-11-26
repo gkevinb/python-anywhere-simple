@@ -22,6 +22,11 @@ def sec():
     return "<p>sec endpoint to test out automated deployement</p>"
 
 
+@app.route("/third")
+def third():
+    return "<p>third endpoint to test out automated deployement</p>"
+
+
 @app.route("/git-update", methods=["POST"])
 def git_update():
     path = pathlib.Path(__file__).parent.resolve()
