@@ -2,11 +2,11 @@ name: "Hit a webhook"
  
 on:
   push:
-    tags:
-      - '**'
+    branches:
+      - master
 
 jobs:
-  run-updater:
+  deployment:
     runs-on: ubuntu-latest
     steps:
     - name: REST API with curl
