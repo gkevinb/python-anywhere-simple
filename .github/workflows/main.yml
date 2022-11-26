@@ -1,4 +1,4 @@
-name: "Hit a webhook"
+name: "Deploy to python anywhere"
  
 on:
   push:
@@ -13,7 +13,6 @@ jobs:
       run: |
         curl -X GET "https://kevinja.pythonanywhere.com/test"
 
-    steps:
     - name: Pull new code to pythonanywhere
       run: |
         curl -X POST "https://kevinja.pythonanywhere.com/git-update"
