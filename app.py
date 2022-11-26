@@ -13,6 +13,11 @@ def test():
     return "<p>Testing new route endpoint!</p>"
 
 
+@app.route("/new")
+def test():
+    return "<p>New endpoint to test out automated deployement</p>"
+
+
 @app.route("/git-update", methods=["POST"])
 def git_update():
     path = pathlib.Path(__file__).parent.resolve()
