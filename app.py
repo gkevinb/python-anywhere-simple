@@ -21,17 +21,9 @@ def new():
 def sec():
     return "<p>sec endpoint to test out automated deployement</p>"
 
-
-@app.route("/third")
-def third():
-    return "<p>third endpoint to test out automated deployement</p>"
-
-
 @app.route("/git-update", methods=["POST"])
 def git_update():
     path = pathlib.Path(__file__).parent.resolve()
     repo = git.Repo(path)
-    origin = repo.remotes.origin
-    repo.create_head("master", origin.refs.master).set_tracking_branch(origin.refs.master).checkout()
-    origin.pull()
+    repo.remotes.origin.pull()
     return "Pulled Code", 200
