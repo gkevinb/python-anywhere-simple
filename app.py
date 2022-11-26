@@ -17,6 +17,10 @@ def test():
 def new():
     return "<p>New endpoint to test out automated deployement</p>"
 
+@app.route("/sec")
+def sec():
+    return "<p>sec endpoint to test out automated deployement</p>"
+
 
 @app.route("/git-update", methods=["POST"])
 def git_update():
