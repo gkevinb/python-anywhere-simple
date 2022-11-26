@@ -12,3 +12,18 @@ jobs:
     - name: REST API with curl
       run: |
         curl -X GET "https://kevinja.pythonanywhere.com/test"
+
+    steps:
+    - name: Pull new code to pythonanywhere
+      run: |
+        curl -X POST "https://kevinja.pythonanywhere.com/git-update"
+
+    # - name: Pull new code to pythonanywhere
+    #   uses: fjogeleit/http-request-action@v1
+    #   with:
+    #     url: 'https://ansible.io/api/v2/job_templates/84/launch/'
+    #     method: 'POST'
+    #     username: ${{ secrets.AWX_USER }}
+    #     password: ${{ secrets.AWX_PASSWORD }}
+    #     customHeaders: '{"Content-Type": "application/json"}'
+    #     data: '{"key_1": "value_1", "key_2": "value_2"}'
