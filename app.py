@@ -14,7 +14,7 @@ def test():
 
 @app.route("/git-update", methods=["POST"])
 def git_update():
-    repo = git.Repo("./python-anywhere-simple")
+    repo = git.Repo("./")
     origin = repo.remotes.origin
     repo.create_head("master", origin.refs.main).set_tracking_branch(origin.refs.master).checkout()
     origin.pull()
