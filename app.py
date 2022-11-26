@@ -12,6 +12,7 @@ def hello_world():
 def test():
     return "<p>Testing new route endpoint!</p>"
 
+
 @app.route("/git-update", methods=["POST"])
 def git_update():
     path = pathlib.Path(__file__).parent.resolve()
