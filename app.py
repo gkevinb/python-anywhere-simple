@@ -10,12 +10,7 @@ def hello_world():
 
 @app.route("/test")
 def test():
-    return "<p>Testing new route endpoint!</p>"
-
-
-@app.route("/new")
-def new():
-    return "<p>New endpoint to test out automated deployement</p>"
+    return "<p>Testing new route endpoint!! its working!!</p>"
 
 @app.route("/change")
 def change():
