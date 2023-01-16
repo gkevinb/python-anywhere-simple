@@ -16,6 +16,10 @@ def test():
 def change():
     return "<p>chagnge this endopint</p>"
 
+@app.route("/new")
+def new_endpoint():
+    return "<p>new endpoint here!!! this endopint</p>"
+
 @app.route("/git-update", methods=["POST"])
 def git_update():
     path = pathlib.Path(__file__).parent.resolve()
